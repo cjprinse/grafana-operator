@@ -269,7 +269,7 @@ func (r *ReconcileGrafana) getGrafanaAdminUrl(cr *grafanav1alpha1.Grafana, state
 
 	// Otherwise rely on the service
 	if state.GrafanaService != nil {
-		return fmt.Sprintf("http://%v.%v.svc.cluster.local:%d", state.GrafanaService.Name, cr.Namespace,
+		return fmt.Sprintf("http://%v.%v.svc:%d", state.GrafanaService.Name, cr.Namespace,
 			servicePort), nil
 	}
 
